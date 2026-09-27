@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "560356401180",
+    "project_id": "popmedia-38845",
+    "storage_bucket": "popmedia-38845.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:560356401180:android:7ce6b7c0fb78afc1f0ffd9",
+        "android_client_info": {
+          "package_name": "com.popmedia.popmedia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "560356401180-pj2df09g90ld9gpreo0aankeeg41bovl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxhvqxcWqVXHbTuSdEgtOv8opnd3tCClo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "560356401180-pj2df09g90ld9gpreo0aankeeg41bovl.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "560356401180-3uv9so9j11dl51qhmtfl9t6cg544flqm.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.popMedia"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:560356401180:android:f78476a895f6136cf0ffd9",
+        "android_client_info": {
+          "package_name": "com.popmedia.popmedia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "560356401180-pj2df09g90ld9gpreo0aankeeg41bovl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxhvqxcWqVXHbTuSdEgtOv8opnd3tCClo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "560356401180-pj2df09g90ld9gpreo0aankeeg41bovl.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "560356401180-3uv9so9j11dl51qhmtfl9t6cg544flqm.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.popMedia"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

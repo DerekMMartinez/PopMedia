@@ -1,0 +1,547 @@
+<!-- ===================== tutorial.html ===================== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Tutorial | PopMedia</title>
+  <style>
+    :root {
+      --bg: #f7f8fc;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #5b6472;
+      --accent: #A0B4DB;
+      --accent-soft: #eef2ff;
+      --border: #e5e7eb;
+      --shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    nav.topbar {
+      background: #f4f4f4;
+      padding: 12px 16px;
+      text-align: center;
+      border-bottom: 1px solid #e2e2e2;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    nav.topbar a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 700;
+    }
+
+    .page-shell {
+      max-width: 1500px;
+      margin: 0 auto;
+      padding: 28px 18px 56px;
+    }
+
+    .page-header {
+      text-align: center;
+      margin-bottom: 26px;
+    }
+
+    .page-header h1 {
+      margin: 0 0 8px;
+      font-size: clamp(2rem, 3vw, 2.6rem);
+    }
+
+    .page-header p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .toc-toggle {
+      position: fixed;
+      left: 16px;
+      top: 86px;
+      z-index: 1000;
+      width: 46px;
+      height: 46px;
+      border: none;
+      border-radius: 50%;
+      background: var(--accent);
+      color: white;
+      font-size: 1.15rem;
+      cursor: pointer;
+    }
+
+    .layout {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    aside.sidebar {
+      position: fixed;
+      left: 16px;
+      top: 146px;
+      width: 310px;
+      max-height: calc(100vh - 166px);
+      overflow-y: auto;
+      background: var(--card);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      padding: 18px 16px 14px;
+      transform: translateX(-115%);
+      transition: transform 0.25s ease;
+      z-index: 999;
+    }
+
+    aside.sidebar.open {
+      transform: translateX(0);
+    }
+
+    .sidebar h2 {
+      margin: 0 0 12px;
+      font-size: 1.1rem;
+    }
+
+    .toc {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .toc a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.96rem;
+      padding: 2px 0;
+    }
+
+    .toc a:hover {
+      text-decoration: underline;
+    }
+
+    .subtoc {
+      margin-left: 14px;
+      padding-left: 12px;
+      border-left: 2px solid #e5e7eb;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    main.content {
+      flex: 1;
+      min-width: 0;
+      margin-left: 64px;
+    }
+
+    .section {
+      background: var(--card);
+      border: 1px solid #e7e7e7;
+      box-shadow: var(--shadow);
+      padding: 22px;
+      margin-bottom: 20px;
+    }
+
+    .section h2 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 1.45rem;
+    }
+
+    .section h3 {
+      margin: 20px 0 8px;
+      color: var(--accent);
+      font-size: 1.08rem;
+    }
+
+    .section p {
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+
+    .brief {
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .todo {
+      background: var(--accent-soft);
+      border-left: 4px solid var(--accent);
+      padding: 10px 14px;
+      border-radius: 10px;
+      color: #374151;
+      margin-top: 10px;
+    }
+
+    .section, .content h3 {
+      scroll-margin-top: 90px;
+    }
+
+    @media (max-width: 980px) {
+      .layout {
+        display: block;
+      }
+
+      main.content {
+        margin-left: 0;
+      }
+
+      .toc-toggle {
+        top: 80px;
+      }
+
+      aside.sidebar {
+        top: 136px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .page-shell {
+        padding: 24px 14px 44px;
+      }
+
+      aside.sidebar {
+        width: calc(100vw - 28px);
+        left: 14px;
+      }
+    }
+
+    .image-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin: 16px 0 20px;
+    }
+
+    .image-row img {
+      width: 180px;
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    }
+  </style>
+</head>
+<body>
+  <nav class="topbar">
+    <a href="team-homepage.html">About PopMedia</a>
+    <a href="team.html">Team Members</a>
+    <a href="tutorial.html">User Tutorial</a>
+    <a href="access.html">Access</a>
+  </nav>
+
+  <button class="toc-toggle" id="tocToggle" aria-label="Toggle contents" aria-expanded="false">☰</button>
+
+  <aside class="sidebar" id="sidebar" aria-label="Tutorial contents">
+    <h2>Contents</h2>
+    <nav class="toc">
+      <a href="#login">Login Page</a>
+      <a href="#create-account">Create Account</a>
+      <a href="#upload-page">Upload Page</a>
+
+      <a href="#home-page">Home Page</a>
+      <div class="subtoc">
+        <a href="#settings-popup">Settings PopUp</a>
+        <a href="#my-reviews">My Reviews</a>
+        <a href="#following-reviews">Following Reviews</a>
+        <a href="#trending">Trending</a>
+      </div>
+
+      <a href="#single-review">Single Review Page</a>
+      <div class="subtoc">
+        <a href="#media-badge">Media Badge</a>
+        <a href="#editing-review">Editing</a>
+        <a href="#other-reviews">Other Reviews</a>
+      </div>
+
+      <a href="#season-review">Season Review Page</a>
+      <div class="subtoc">
+        <a href="#season-editing">Editing</a>
+      </div>
+
+      <a href="#grid-pages">Grid Pages</a>
+      <div class="subtoc">
+        <a href="#grid-search">Search Button</a>
+      </div>
+
+      <a href="#overview-page">Overview Page</a>
+      <div class="subtoc">
+        <a href="#overview-reviews">Reviews</a>
+        <a href="#overview-recommendations">Recommendations</a>
+      </div>
+
+      <a href="#profile-page">Profile Page</a>
+      <div class="subtoc">
+        <a href="#account-info">Account Information</a>
+        <a href="#edit-account">Edit Account</a>
+        <a href="#friends">Friends</a>
+        <a href="#profile-reviews">My Reviews</a>
+        <a href="#playlists">Playlists</a>
+        <a href="#badges">My Badges</a>
+        <a href="#recaps">My Recaps</a>
+      </div>
+
+        <a href="#single-playlist">Single Playlist Page</a>
+      <div class="subtoc">
+        <a href="#collaborators">Collaborators</a>
+        <a href="#playlist-media">Playlist Media</a>
+      </div>
+
+      <a href="#discover-page">Discover Page</a>
+      <div class="subtoc">
+        <a href="#discover-search">Search</a>
+        <a href="#discover-recommendations">Recommendations</a>
+        <a href="#discover-trending">Trending</a>
+        <a href="#discover-vibe">Vibe Search</a>
+      </div>
+
+      <a href="#vibe-search">Vibe Search Page</a>
+      <div class="subtoc">
+        <a href="#wheel-select">Wheel Select</a>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="page-shell">
+    <div class="page-header">
+      <h1>PopMedia User Tutorial</h1>
+      <p>We recommend you start by reviewing The Upload Page section (see table of contents). Then reference this when necessary as exploring the app.</p>
+    </div>
+
+    <div class="layout">
+      <main class="content">
+        <section class="section" id="login">
+          <div class="image-row">
+            <img src="screenshots/login.png" alt="Upload Page">
+          </div>
+          <h2>Login Page</h2>
+          
+          <p>If you don’t have an account, click Create Account to navigate to a new page and get started with
+             PopMedia, otherwise enter your details and click Sign In, or click Forgot Password to receive a password reset email.</p>
+        </section>
+
+        <section class="section" id="create-account">
+          <div class="image-row">
+            <img src="screenshots/create_account.png" alt="Upload Page">
+          </div>
+          <h2>Create Account</h2>
+          
+          <p>Enter details for your new account and click Create Account to confirm or click Login Page to navigate back to the login screen. </p>
+        </section>
+
+        <section class="section" id="upload-page">
+          <h2>Upload Page</h2>
+          <div class="image-row">
+            <img src="screenshots/upload.png" alt="Upload Page">
+          </div>
+          
+          <p>You can navigate to this page by clicking the center button on the navigation bar. The required components of your review are marked with a *. If you navigate away from this page, you will be prompted “Are you sure?” to prevent losing your progress.
+<br><h3 id="media-selector">Media Type Selector</h3>On the upload page you should first select the media type at the very top (this will control what search results appear in the search box)
+<br><h3 id="media-search">Media Search</h3> In this box, search the title of the media you want to upload a review for and select it from the drop down
+<br><h3 id="date-watched">Date Watched</h3>Tap on the date to open up the date selector, here you can pick when you consumed this media.
+<br><h3 id="review">Review</h3> Click on the stars to set your rating of the media, then fill out the text box with your thoughts on the media (tick the spoilers box if your review gives away critical plot points!)
+<br><h3 id="privacy-selector">Privacy Selector</h3> Your selection here controls who will be able to view your review:     Public: any PopMedia user. 	Friends Only: only mutual followers.	   My Eyes Only: only you.
+<br><h3 id="post-button">Post Button</h3> Submit your review and post it to your account.
+ </p>
+        </section>
+
+        <section class="section" id="home-page">
+          <h2>Home Page</h2>
+          <div class="image-row">
+            <img src="screenshots/home.png" alt="Home Page">
+            <img src="screenshots/settings.png" alt="Settings Page">
+          </div>
+          <p>You are automatically directed to the Home Page after logging in and after uploading a review. You can also access it from the navigation bar.</p>
+          <p>The Home Page contains three horizontally scrollable sections. Each section has a forward arrow that takes you to a related Grid Page.</p>
+
+          <h3 id="settings-popup">Settings PopUp</h3>
+          <p>Toggle accessibility features, customize your theme and profile or manage account/session settings. Reports can be made from the settings popup, specific review pages, and even profile pages.These reports are reviewed and resolved by popMedia administrators.</p>
+
+          <h3 id="my-reviews">My Reviews</h3>
+          <p>Displays your uploaded reviews from most recent to least recent based on the upload date. Each review is clickable and opens the Single Review Page.</p>
+
+          <h3 id="following-reviews">Following Reviews</h3>
+          <p>Displays reviews from people you follow in chronological order. You will only see public reviews, or friends-only reviews if you are mutual friends. Each review opens the Single Review Page.</p>
+
+          <h3 id="trending">Trending</h3>
+          <p>Displays trending media on the application, showing items that have been reviewed most frequently in the recent past. Each item opens the Overview Page.</p>
+        </section>
+
+        <section class="section" id="single-review">
+          <h2>Single Review Page</h2>
+          <div class="image-row">
+            <img src="screenshots/single_review.png" alt="Single Review Page">
+            <img src="screenshots/media_badge_locked.png" alt="Media Badge Locked Page">
+          </div>
+          <p>This page shows one full review. In the top right, you will see the username, star rating, date, and badge. Below that is the review text, and if the review is for television, a Season Reviews button appears.</p>
+          <p>In the very top right corner, you will either see a red flag for reporting someone else’s review or a pencil icon for editing your own review.</p>
+
+          <h3 id="media-badge">Media Badge</h3>
+          <p>The badge may show a question mark or the media cover image. A question mark means the badge is locked. If you click on it you can see how to unlock it. A cover image means the badge has been earned and can be clicked to see how it was unlocked.</p>
+
+          <h3 id="editing-review">Editing</h3>
+          <p>When editing, a green checkmark and red trashcan appear. You can update the rating, review, date, spoilers, privacy, and photo (from files on web, photo library on ios, or camera on android). Clicking the checkmark saves the review, while the trashcan deletes it.</p>
+
+          <h3 id="other-reviews">Other Reviews</h3>
+          <p>At the bottom is a horizontally scrollable section with other reviews for the same media. These appear in this order: friends, people you follow, public users, then external sources like TMDB or IMDb. In the parenthesis you will see a count of the total number of other reviews for the type of media. A forward arrow expands the section vertically.</p>
+        </section>
+
+        <section class="section" id="season-review">
+          <h2>Season Review Page</h2>
+          <div class="image-row">
+            <img src="screenshots/season_review.png" alt="Season Review Page">
+          </div>
+          <p>This page is only available from a television review and shows season-by-season reviews for that show. The original television review appears in the top right corner.</p>
+          <p>Each season can show a rating, review text, date, and spoilers. If it is your own review, you can edit each season review directly.</p>
+
+          <h3 id="season-editing">Editing</h3>
+          <p>When editing, a green checkmark and red trashcan appear. Use the checkmark to save changes or the trashcan to delete the season review.</p>
+        </section>
+
+        <section class="section" id="grid-pages">
+          <h2>Grid Pages</h2>
+          <div class="image-row">
+            <img src="screenshots/my_reviews.png" alt="My Reviews Page">
+          </div>
+          <p>Grid Pages display a grid of items such as reviews, media, badges, playlists, or users. If there are no items, the page shows “No items found.” Every item is clickable and leads to the related page or popup.</p>
+          <p>My Reviews, Following Reviews, Trending Media, and Recommended Media include a filter box for books, movies, television, or all. My Reviews, Following Reviews, Friends, and Playlists include a search button. Trending and Recommended pages also include a wheel selector.</p>
+          <p>The Playlists grid includes an Add New Playlist button that opens the create playlist page.</p>
+
+          <h3 id="grid-search">Search Button</h3>
+          <p>The search button lets you search media titles, playlist titles, usernames, and names depending on the grid you are viewing.</p>
+        </section>
+
+        <section class="section" id="overview-page">
+          <h2>Overview Page</h2>
+          <div class="image-row">
+            <img src="screenshots/overview.png" alt="My Reviews Page">
+          </div>
+          <p>This page appears when you click on a piece of media. It shows details such as media type, title, year released, genres, creator, overall star rating, and summary.</p>
+          <p>In the top right, the plus icon lets you upload a review or add the media to a playlist.</p>
+
+          <h3 id="overview-reviews">Reviews</h3>
+          <p>Below the media information, you can view reviews for that media. Spoilers are blurred until you click “Show Spoilers.” A right-facing arrow on each review opens the Single Review Page.</p>
+
+          <h3 id="overview-recommendations">Recommendations</h3>
+          <p>This section shows similar recommended media, separated into books, movies, and television. Clicking an item opens its Overview Page.</p>
+        </section>
+
+        <section class="section" id="profile-page">
+          <h2>Profile Page</h2>
+          <div class="image-row">
+            <img src="screenshots/profile_top.png" alt="Profile Page Top">
+            <img src="screenshots/profile_bottom.png" alt="Profile Page Bottom">
+            <img src="screenshots/edit_account.png" alt="Edit Account">
+          </div>
+          <div class="image-row">
+            <img src="screenshots/badge_locked.png" alt="Badge Locked">
+            <img src="screenshots/badge_earned.png" alt="Badge Earned">
+            <img src="screenshots/recap.png" alt="Recap Page">
+          </div>
+          <h3 id="account-info">Account Information</h3>
+          <p>At the top of your profile, you can see counts for that users reviews, badges, following, and followers. Clicking any count opens the related page. If you are viewing another user’s profile, you will see a follow or unfollow button.</p>
+
+          <h3 id="edit-account">Edit Account</h3>
+          <p>On your own Profile page the Edit Profile button will be available and it lets you change your profile picture, username, name, and bio.</p>
+
+          <h3 id="friends">Friends</h3>
+          <p>Below the account information, you can see friends. Friends are users who follow you and are followed back by you. Clicking a friend’s icon opens their Profile page.</p>
+
+          <h3 id="profile-reviews">My Reviews</h3>
+          <p>That users reviews are listed from most recent to least recent. On your own profile page you will see all your reviews but on anothers you will onky see the ones you have access to based on the reviews privacy level.</p>
+
+          <h3 id="playlists">Playlists</h3>
+          <p>This section shows the public playlists that user created or collaborated on (or all playlists if it is your own profile). Clicking a playlist opens the Single Playlist Page.</p>
+
+          <h3 id="badges">My Badges</h3>
+          <p>You can see badges you have earned and badges you still need to unlock. Clicking a badge shows a popup explaining how to earn it.</p>
+
+          <h3 id="recaps">My Recaps</h3>
+          <p>This section only appears on your own profile page. Annual recaps are listed by year. Clicking one opens your Recap Page for that year, which includes graphs, podiums, and stats about your favorite media and creators.</p>
+        </section>
+
+        <section class="section" id="single-playlist">
+          <h2>Single Playlist Page</h2>
+          <div class="image-row">
+            <img src="screenshots/playlist.png" alt="Single Playlist Page">
+          </div>
+          <p>This page shows the information about a playlist including its cover image, name, and description.</p>
+          <p>If you are a collaborator on this playlist there will be an edit button in the very top right corner which you can use to edit the privacy, image, name, and description or delete the playlist entirely if you are the original owner.</p>
+
+          <h3 id="collaborators">Collaborators</h3>
+          <p>Here you can see first the owner then all the current collaborators. Use the Manage button to add or delete collaborators (you cannot delete the original owner).</p>
+
+          <h3 id="playlist-media">Playlist Media</h3>
+          <p>Here you can see all of the media in this playlist. You can filter by type or search by title. Use the Manage Media button to add or delete media.</p>
+
+        </section>
+
+        <section class="section" id="discover-page">
+          <h2>Discover Page</h2>
+          <div class="image-row">
+            <img src="screenshots/discover.png" alt="Discover Page">
+          </div>
+          <p>The Discover Page is reached from the second icon in the main navigation bar. It lets you search media, view recommendations, check trending media, and access Vibe Search.</p>
+
+          <h3 id="discover-search">Search</h3>
+          <p>Use the search bar to search for media, users, and playlists. The filter in the search bar can narrow results by All, Users, Playlists, Books, Movies, or TV Shows.</p>
+
+          <h3 id="discover-recommendations">Recommendations</h3>
+          <p>This section shows recommendations based on your full profile. New reviews update the recommendations automatically. The arrow opens a recommendation grid with filtering and wheel selection tools.</p>
+
+          <h3 id="discover-trending">Trending</h3>
+          <p>This section provides another way to view trending media.</p>
+
+          <h3 id="discover-vibe">Vibe Search</h3>
+          <p>The Vibe Search button opens the Vibe Search Page.</p>
+        </section>
+
+        <section class="section" id="vibe-search">
+          <h2>Vibe Search Page</h2>
+          <div class="image-row">
+            <img src="screenshots/vibe.png" alt="Vibe Search Page">
+            <img src="screenshots/vibe_grid.png" alt="Vibe Grid">
+            <img src="screenshots/wheel.png" alt="Wheel Select">
+          </div>
+          <p>On the Vibe Search Page, you can search by mood or meaning instead of exact titles. For example, a search like “dark and moody superhero” may return The Batman.</p>
+          <p>The search can be limited by media type using the filter beside the search bar. Results appear in a scrollable grid, and each item opens its Overview Page.</p>
+
+          <h3 id="wheel-select">Wheel Select</h3>
+          <p>The Wheel Select icon appears on the Recommendations Grid, Trending Grid, and Vibe Search Page. It randomly chooses one of six pieces of media from the grid, then shows a popup with the selection.</p>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    const toggleButton = document.getElementById('tocToggle');
+    const sidebar = document.getElementById('sidebar');
+
+    if (toggleButton && sidebar) {
+      toggleButton.addEventListener('click', () => {
+        const isOpen = sidebar.classList.toggle('open');
+        toggleButton.textContent = isOpen ? '✕' : '☰';
+        toggleButton.setAttribute('aria-expanded', String(isOpen));
+      });
+    }
+  </script>
+</body>
+</html>

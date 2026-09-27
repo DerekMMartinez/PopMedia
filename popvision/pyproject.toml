@@ -1,0 +1,20 @@
+[project]
+name = "popvision"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12, <3.14"
+dependencies = [
+    "fastapi[standard]>=0.135.2",
+    "numpy>=2.4.4",
+    "opencv-python>=4.13.0.92",
+    "opencv-python-headless>=4.13.0.92",
+    "paddleocr>=3.4.0",
+    "paddlepaddle>=3.3.1",
+    "pillow>=12.1.1",
+    "pydantic>=2.12.5",
+    "rapidfuzz>=3.14.3",
+    "requests>=2.33.1",
+    "torch>=2.11.0",
+    "transformers>=5.4.0",
+]

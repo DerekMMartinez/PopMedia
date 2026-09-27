@@ -1,0 +1,205 @@
+<!-- ===================== team.html ===================== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team Members | PopMedia</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fafafa;
+      color: #222;
+    }
+
+    nav {
+      background: #f4f4f4;
+      padding: 12px 16px;
+      text-align: center;
+      border-bottom: 1px solid #e2e2e2;
+      position: sticky;
+      top: 0;
+    }
+
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 18px 56px;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 10px 0 28px;
+    }
+
+    .member {
+        background: white;
+        border: 1px solid #e7e7e7;
+        border-radius: 18px;
+        padding: 22px;
+        margin: 22px 0;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+        overflow: hidden;
+    }
+
+    .photo {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    overflow: hidden;
+    float: left;
+    margin: 0 22px 12px 0;
+    shape-outside: circle();
+    shape-margin: 12px;
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .content {
+      text-align: left;
+    }
+
+    .content h2 {
+      margin-top: 0;
+      margin-bottom: 6px;
+      font-size: 1.7rem;
+    }
+
+    .role {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #A0B4DB;
+      color: #FFFF;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .contact {
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid #ececec;
+      font-size: 0.95rem;
+    }
+
+    .contact a {
+      color: #4f46e5;
+      text-decoration: none;
+      word-break: break-word;
+    }
+
+    .section-title {
+      text-align: center;
+      margin: 0 0 20px;
+      color: #444;
+      font-weight: normal;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="team-homepage.html">About PopMedia</a>
+    <a href="team.html">Team Members</a>
+    <a href="tutorial.html">User Tutorial</a>
+    <a href="access.html">Access</a>
+  </nav>
+
+  <div class="container">
+    <h1>Meet the Team</h1>
+
+
+    <section class="member">
+      <div class="photo">
+        <img src="photos/camille.png" alt="Camille Shreeve">
+      </div>
+      <div class="content">
+        <h2>Camille Shreeve</h2>
+        <span class="role">Frontend Development Lead</span>
+        <div class="bio">
+            <p>I am an honors student at the University of Utah, pursuing a degree in computer science with minors in mathematics and ecology. Throughout 2025, I worked as a Full Stack Development Intern at Peraton, a company that works in web development for government environmental regulations.</p>
+            <p>I was the Frontend Development Lead of our capstone project, PopMedia. My main responsibilities included creating the frontend architecture, designing a unique user interface, and intuitive navigation. Additionally, I worked on creating the testing suite, researching and implementing the CI/CD pipeline, connecting functionality between frontend and backend, user study bug fixes, and spoilers. In the final phase I was solely responsible for season reviews, reporting, the admin dashboard, and accessibility features (text to speech, dynamic text sizing, and themes).</p>
+            <p>The types of media I most enjoy include reality television, classic novels, and scary movies. My top 3 movies are Scream, Scooby-Doo!, and SLC Punk. My top 3 television shows are Scooby Doo Mystery Incorporated, The Real Housewives, and Freaks and Geeks. My top 3 books are The Picture of Dorian Gray, The Bell Jar, and Pride &amp; Prejudice.</p>
+        </div>
+        <div class="contact">
+          <strong>Contact Info:</strong><br>
+          Email: <a href="mailto:camilleshreeve16@gmail.com">camilleshreeve16@gmail.com</a><br>
+          LinkedIn: <a href="https://www.linkedin.com/in/camille-shreeve-02b3a7250" target="_blank" rel="noopener noreferrer">linkedin.com/in/camille-shreeve-02b3a7250</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="member">
+      <div class="photo">
+        <img src="photos/derek.png" alt="Derek Martinez">
+      </div>
+      <div class="content">
+        <h2>Derek Martinez</h2>
+        <span class="role">Backend Development Lead</span>
+        <p>I am a Computer Science major with an emphasis in AI, and a minor in Mathematics at the University of Utah. Over my time at the U, I’ve worked on many projects in many different programming languages, my favorite of which are Python, Java, and C++/C.</p>
+        <p>From January 2025 to Fall 2026, I have been a TA for Algorithms, and Summer of 2023 I was a Data Intern at Recovery Control Systems, which is a Software as a Service company, specializing in package delivery.</p>
+        <p>I was the Backend Development Lead of our capstone project, PopMedia. My primary responsibilities were designing our Controller and implementing base logic. I am solely responsible for Recommendation Algorithm and Vector Database logic, optimizing backend through Dynamic Caching and multi-threading, creating the Annual Recap Data collection, backend and frontend logic, and connecting to external APIs and cleaning the response data into our standard.</p>
+        <p>I enjoy many types of media. I love binging shows, enjoying cinema, and reading stories. My top 3 movies include McFarland USA, Dune 2, and The Martian. My favorite TV shows are Psych, Invincible, and Peaky Blinders. My top 3 books are The Hunger Games: Catching Fire, Harry Potter and the Deathly Hallows, and The Maze Runner.</p>
+        <div class="contact">
+          <strong>Contact Info:</strong><br>
+          Email: <a href="mailto:drkmtz01@gmail.com">drkmtz01@gmail.com</a><br>
+          LinkedIn: <a href="https://www.linkedin.com/in/derek-michael-martinez" target="_blank" rel="noopener noreferrer">linkedin.com/in/derek-michael-martinez</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="member">
+      <div class="photo">
+        <img src="photos/ella.jpg" alt="Ella Beck">
+      </div>
+      <div class="content">
+        <h2>Ella Beck</h2>
+        <span class="role">Database Development Lead</span>
+        <p>I am a student at the University of Utah getting my Bachelors degree in Computer Science. I have focused my educational experience on Human Centered Design and Databases. During my time at university I have worked with many programming languages but the ones that I am the most comfortable with are Java, Python and SQL.</p>
+        <p>I was the Database Development Lead of our capstone project, PopMedia. I designed and created over fifteen tables to fit the storage needs for our user data including users, reviews, following, badges, reports, seasons, and playlists. Additionally I was responsible for implementing a majority of the full stack connections relating to this user database. I also did some frontend work, user studies, and general bug fixes. In the final phase I was solely responsible for implementing all aspects of Playlists. This includes the ability to create, edit and delete playlists as well as add a cover photo. Additionally you can add and delete media, add and delete other users as collaborators, and make it public or private.</p>
+        <p>I enjoy a wide range of media, including rom-coms, sci-fi, dystopian stories, procedurals, and underdog narratives. My top 3 movies are Major League, Star Trek, and 10 Things I Hate About You. My top 3 television shows are Veronica Mars, Psych, and Panic. My top 3 books are Cinder, Jayhawk, and Ready Player One. </p>
+        <div class="contact">
+          <strong>Contact Info:</strong><br>
+          Email: <a href="mailto:ellabeck21@gmail.com ">ellabeck21@gmail.com </a><br>
+          LinkedIn: <a href="https://www.linkedin.com/in/gabriellabeck/" target="_blank" rel="noopener noreferrer">linkedin.com/in/gabriellabeck/ </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="member">
+      <div class="photo">
+        <img src="photos/jai.jpg" alt="Jaibir Singh Sandhu">
+      </div>
+      <div class="content">
+        <h2>Jaibir Singh Sandhu</h2>
+        <span class="role">Security and Image Processing Lead</span>
+        <p>I am an undergraduate student studying Computer Science here at the University of Utah. My focus has been machine learning for the length of my studies here. I assisted the Security and Learning Threats Lab in investigating novel attacks on LLM systems during Summer 2025. I’ve accepted an offer for a Masters’ in Computer Science
+           at Georgia Institute of Technology starting this fall and I’m open to work this summer.</p>
+        <p>I was the Security and Image Processing lead for our capstone project. PopMedia contains an ML vision task for verifying user uploaded images of their book cover/ movie poster/ etc. Developing the solution involved building datasets - a generated, synthetic dataset for updating training weights and sets of positive & negative user inputs
+           for evaluation. I constructed a data pipeline which evaluates a model’s efficacy (e.g. error matrices) and outputs histograms to guide hyperparameter tuning. I improved the robustness of the solution by combining the ML model output with geometric and OCR similarity ratings. I also built the API through which the final solution
+            is served. My Frontend contributions were setting up how user profile pictures are stored, served and displayed, ensuring system responsiveness while data is being sent/awaited as well as graphic design for various pages.</p>
+        <p>My favorite TV shows include Mr. Robot, Breaking Bad and Regular Show. My favorite books are The Name of the Wind, The Outsider: My Life in Intrigue, and How Minds Change. My top 3 movies are Dhamaal, Prisoners, and Puss in Boots: The Last Wish.</p>
+        <div class="contact">
+          <strong>Contact Info:</strong><br>
+          Email: <a href="mailto:jaibir.s.sandhu@gmail.com">jaibir.s.sandhu@gmail.com</a><br>
+          LinkedIn: <a href="https://www.linkedin.com/in/jaibir-singh-sandhu" target="_blank" rel="noopener noreferrer">linkedin.com/in/jaibir-singh-sandhu</a>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
