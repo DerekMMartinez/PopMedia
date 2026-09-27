@@ -4,6 +4,7 @@ Welcome to PopMedia's GitLab repository.
 PopMedia is the social multimedia review app and there is nothing like it out there! It’s intended for bookworms, movie buffs and binge watchers alike. The goal is to create a rich user experience involving writing reviews, leaving comments on friends’ posts, finding your new favorite series, then snapping a photo to wrap it up once the series is done.
 
 ## Getting Started
+*This is purely code and not actually connected to or running anything* 
 
 This project is a starting point for a Flutter application.
 
